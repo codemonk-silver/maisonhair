@@ -158,7 +158,10 @@ export default function HeroScene({ heroSpacerRef }: { heroSpacerRef: React.RefO
     if (!canvasContainerRef.current || !heroSpacerRef.current) return;
 
     const container = canvasContainerRef.current;
-    const screenSize = { width: window.innerWidth, height: window.innerHeight };
+    const screenSize = {
+      width: document.documentElement.clientWidth,
+      height: window.innerHeight,
+    };
 
     // Scene setup
     const scene = new THREE.Scene();
@@ -174,6 +177,8 @@ export default function HeroScene({ heroSpacerRef }: { heroSpacerRef: React.RefO
     renderer.setSize(screenSize.width, screenSize.height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.outputColorSpace = THREE.SRGBColorSpace;
+    renderer.domElement.style.display = 'block';
+    renderer.domElement.style.maxWidth = '100%';
     container.appendChild(renderer.domElement);
 
     // Raycasting plane
@@ -443,7 +448,7 @@ export default function HeroScene({ heroSpacerRef }: { heroSpacerRef: React.RefO
 
     // Resize
     function handleResize() {
-      screenSize.width = window.innerWidth;
+      screenSize.width = document.documentElement.clientWidth;
       screenSize.height = window.innerHeight;
       camera.aspect = screenSize.width / screenSize.height;
       camera.updateProjectionMatrix();

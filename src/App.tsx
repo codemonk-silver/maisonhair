@@ -91,7 +91,19 @@ function App() {
       <Navigation lenisRef={lenisRef as React.MutableRefObject<any>} />
 
       {/* Fixed hero canvas */}
-      <div className="hero-canvas-container" style={{ position: 'fixed', inset: 0, zIndex: 0 }}>
+      <div
+        className="hero-canvas-container"
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100vh',
+          maxWidth: '100vw',
+          overflow: 'hidden',
+          zIndex: 0,
+        }}
+      >
         {/* Ambient video background */}
         <video
           autoPlay
@@ -100,7 +112,8 @@ function App() {
           playsInline
           style={{
             position: 'absolute',
-            inset: 0,
+            top: 0,
+            left: 0,
             width: '100%',
             height: '100%',
             objectFit: 'cover',
@@ -113,7 +126,19 @@ function App() {
       </div>
 
       {/* Fixed hero text overlay */}
-      <div className="hero-overlay-container" style={{ position: 'fixed', inset: 0, zIndex: 1 }}>
+      <div
+        className="hero-overlay-container"
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100vh',
+          maxWidth: '100vw',
+          overflow: 'hidden',
+          zIndex: 1,
+        }}
+      >
         <HeroOverlay lenisRef={lenisRef as React.MutableRefObject<any>} />
       </div>
 
