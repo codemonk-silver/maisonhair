@@ -1,73 +1,54 @@
-# React + TypeScript + Vite
+# MaisonHair ✂️✨
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A premium, modern frontend experience engineered for a high-end luxury salon and hair brand. Built using **React.js**, this application focuses heavily on high-fidelity user experience, elegant layout structures, and fluid responsive design principles across all device form factors.
 
-Currently, two official plugins are available:
+🚀 **Live Production Link:** [maisonhair.vercel.app](https://maisonhair.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🛠️ Tech Stack & Styling Architecture
+- **Core Engine:** React.js (Component-driven architecture)
+- **Styling Core:** Utility-first styling / Modern CSS configurations
+- **Media Optimization:** Lazy-loaded asset pipelines for high-resolution imagery
+- **Deployment & Hosting:** Vercel Production Runtime Engine
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 📈 Engineering Highlights
+- **Fluid Viewport Layouts:** Achieved pixel-perfect design alignment matching strict desktop, tablet, and mobile breakpoints natively.
+- **Component Reusability:** Engineered modular presenting components (service grids, testimonial carousels, booking anchors) to guarantee high rendering performance.
+- **Performance Optimization:** Implemented asset structural optimizations to minimize render-blocking resources and ensure fast visual loading times.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🚀 Getting Started & Local Setup
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+To run this project locally, execute the following commands in your terminal:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 1. Clone the Repository
+```bash
+git clone https://github.com[your-repository-name].git
+cd [your-repository-name]
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Install Project Dependencies
+```bash
+npm install
+```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 3. Start the Development Environment
+```bash
+npm run dev
+```
+Once started, navigate to [http://localhost:5173](http://localhost:5173) (or your terminal's specific local port) to preview the live application.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## 📂 Structural Architecture Overview
+```text
+src/
+├── components/     # Reusable layout fragments (Navbar, Footer, ServiceCards)
+├── sections/       # Primary structural sections (Hero, About, Booking, Gallery)
+├── assets/         # Optimized imagery and branding elements
+└── App.jsx         # Root app runtime container
 ```
